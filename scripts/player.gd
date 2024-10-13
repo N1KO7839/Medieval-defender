@@ -10,44 +10,93 @@ var currentAttack: bool
 
 var gravity = 900
 
+var health = 100
+var maxHealth = 100
+var minHealth = 0
+var canTakeDamage: bool
+var dead: bool
+
 
 func _ready():
 	Global.playerBody = self
 	currentAttack = false
+	dead = false
+	canTakeDamage = true
+	Global.playerAlive = true
 
 
 func _physics_process(delta: float) -> void:
 	
 	Global.playerDamageZone = dealDamageZone
 	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	
+	if !dead:
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_power
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = jump_power
 
 
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		var direction = Input.get_axis("left", "right")
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
 	
-	if !currentAttack:
-		if Input.is_action_just_pressed("leftMouse") or Input.is_action_just_pressed("rightMouse"):
-			currentAttack = true
-			if Input.is_action_just_pressed("leftMouse") and is_on_floor():
-				attackType = "singleAttack"
-			elif Input.is_action_just_pressed("rightMouse") and is_on_floor():
-				attackType = "doubleAttack"
-			else:
-				attackType = "airAttack"
-			setDamage(attackType)
-			handleAttackAnimation(attackType) 
-	
+		if !currentAttack:
+			if Input.is_action_just_pressed("leftMouse") or Input.is_action_just_pressed("rightMouse"):
+				currentAttack = true
+				if Input.is_action_just_pressed("leftMouse") and is_on_floor():
+					attackType = "singleAttack"
+				elif Input.is_action_just_pressed("rightMouse") and is_on_floor():
+					attackType = "doubleAttack"
+				else:
+					attackType = "airAttack"
+				setDamage(attackType)
+				handleAttackAnimation(attackType) 
+		handleMovementAnimation(direction)
+		chceckHitbox()
 	move_and_slide()
-	handleMovementAnimation(direction)
+	
+func chceckHitbox():
+	var hitboxAreas = $PlayerHitbox.get_overlapping_areas()
+	var damage: int
+	if hitboxAreas:
+		var hitbox = hitboxAreas.front()
+		if hitbox.get_parent() is BatEnemy:
+			damage = Global.batDamageAmout
+	if canTakeDamage:
+		takeDamage(damage)
+	
+func takeDamage(damage):
+	if damage != 0:
+		if health > 0:
+			health -= damage
+			print("health: ", health)
+			if health <= 0:
+				health = 0
+				dead = true
+				Global.playerAlive = false
+				handleDeathAnimation()
+			takeDamageCooldown(1.0)
+			
+func handleDeathAnimation():
+	var target_zoom = Vector2(4, 4)
+	var zoom_speed = 1.0
+	var current_zoom = $Camera2D.zoom
+	AnimatedSprite.play("death")
+	await get_tree().create_timer(0.5).timeout
+	$Camera2D.zoom.x = 4
+	$Camera2D.zoom.y = 4
+	await get_tree().create_timer(3).timeout
+	self.queue_free()
+	
+func takeDamageCooldown(wait_time):
+	canTakeDamage = false
+	await get_tree().create_timer(wait_time).timeout
+	canTakeDamage = true 
 	
 func handleMovementAnimation(dir):
 	if !currentAttack:
@@ -92,9 +141,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func setDamage(attackType):
 	var currentDamageToDeal: int
 	if attackType == "singleAttack":
-		currentDamageToDeal = 8
+		currentDamageToDeal = 10
 	elif attackType == "doubleAttack":
-		currentDamageToDeal = 16
+		currentDamageToDeal = 20
 	elif attackType == "airAttack":
-		currentDamageToDeal = 5
+		currentDamageToDeal = 7
 	Global.playerDamageAmount = currentDamageToDeal

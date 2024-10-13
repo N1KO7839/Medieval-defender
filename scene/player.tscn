@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c5vjfo4etqa5n"]
+[gd_scene load_steps=52 format=3 uid="uid://c5vjfo4etqa5n"]
 
 [ext_resource type="Texture2D" uid="uid://dmbr6pxfh8uq5" path="res://art/assets/Knight_1/Dead.png" id="1_hoh0o"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_lfkg4"]
@@ -200,7 +200,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8wg4y")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 6.0
 }, {
@@ -272,7 +272,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ph0pm")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -323,7 +323,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jdv8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsmk1"]
-radius = 11.0
+radius = 13.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrswq"]
+radius = 8.0
+height = 44.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lfkg4")
@@ -332,7 +336,7 @@ script = ExtResource("1_lfkg4")
 position = Vector2(0, 12.4155)
 scale = Vector2(0.711268, 0.711268)
 sprite_frames = SubResource("SpriteFrames_sfwn8")
-animation = &"doubleAttack"
+animation = &"singleAttack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)
@@ -349,8 +353,14 @@ limit_bottom = 211
 [node name="DealDamageZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
-position = Vector2(22, 14)
+position = Vector2(22, 12)
 shape = SubResource("CircleShape2D_nsmk1")
 disabled = true
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+position = Vector2(3, 21)
+shape = SubResource("CapsuleShape2D_hrswq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

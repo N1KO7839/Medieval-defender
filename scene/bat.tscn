@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dinqoy6a44crp"]
+[gd_scene load_steps=24 format=3 uid="uid://dinqoy6a44crp"]
 
 [ext_resource type="Texture2D" uid="uid://cdrqk35gx2m4f" path="res://art/assets/Bat/Bat.png" id="1_j0hr0"]
 [ext_resource type="Script" path="res://scripts/bat.gd" id="1_rkd1q"]
@@ -112,7 +112,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s8w7t")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 10.0
 }, {
@@ -140,13 +140,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ptlwv")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2k1g"]
 radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqaa5"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kmomy"]
+radius = 7.0
 
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 2
@@ -157,7 +163,7 @@ script = ExtResource("1_rkd1q")
 position = Vector2(2, 2)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_nhibo")
-animation = &"fly"
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
@@ -166,4 +172,17 @@ shape = SubResource("CircleShape2D_t2k1g")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(2, -2)
+shape = SubResource("CircleShape2D_yqaa5")
+
+[node name="BatDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatDamageArea"]
+position = Vector2(2, -2)
+shape = SubResource("CircleShape2D_kmomy")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
