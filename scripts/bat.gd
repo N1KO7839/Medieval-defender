@@ -15,7 +15,7 @@ var MinHealth = 50
 var dead = false
 var takingDamage = false
 var isRoaming: bool
-var damageToDeal = 20
+var damageToDeal = 10
 
 
 

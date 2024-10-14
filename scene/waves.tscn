@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cm46pyf1tldcf"]
+[gd_scene load_steps=24 format=3 uid="uid://cm46pyf1tldcf"]
 
 [ext_resource type="Script" path="res://scripts/waves.gd" id="1_berim"]
 [ext_resource type="Texture2D" uid="uid://dkyue67kubx3y" path="res://art/assets/oak_woods_v1.0/background/background_layer_1.png" id="1_nhg22"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c5vjfo4etqa5n" path="res://scene/player.tscn" id="12_xtg26"]
 [ext_resource type="PackedScene" uid="uid://dinqoy6a44crp" path="res://scene/bat.tscn" id="14_e0hoc"]
 [ext_resource type="PackedScene" uid="uid://fesvbtw0gsg3" path="res://scene/scene_transition_animation.tscn" id="15_liuof"]
+[ext_resource type="PackedScene" uid="uid://bxi21tvhagff0" path="res://scene/skeleton.tscn" id="16_pgukv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6xem"]
 texture = ExtResource("4_wh5b0")
@@ -1636,5 +1637,8 @@ position = Vector2(186, 70)
 
 [node name="Bat3" parent="." instance=ExtResource("14_e0hoc")]
 position = Vector2(265, 93)
+
+[node name="Skeleton" parent="." instance=ExtResource("16_pgukv")]
+position = Vector2(340, 138)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("15_liuof")]

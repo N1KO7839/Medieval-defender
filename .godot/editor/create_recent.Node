@@ -1,4 +1,7 @@
+Timer
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
 AnimationPlayer
 ColorRect
-CollisionShape2D
 Area2D

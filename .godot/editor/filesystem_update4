@@ -1,8 +1,5 @@
 res://scene/lobby.tscn
 res://scene/bat.tscn
 res://scene/waves.tscn
-res://scene/player.tscn
 res://scene/scene_transition_animation.tscn
-res://scripts/lobby.gd
-res://scripts/waves.gd
-res://scripts/player.gd
+res://scene/skeleton.tscn
