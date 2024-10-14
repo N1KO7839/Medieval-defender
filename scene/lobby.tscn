@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvis3bai6h05j"]
+[gd_scene load_steps=23 format=3 uid="uid://cvis3bai6h05j"]
 
 [ext_resource type="Texture2D" uid="uid://ttg3do3lwl3v" path="res://art/assets/oak_woods_v1.0/oak_woods_tileset.png" id="1_abpco"]
 [ext_resource type="Texture2D" uid="uid://dkyue67kubx3y" path="res://art/assets/oak_woods_v1.0/background/background_layer_1.png" id="1_gl36n"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfjb28arno3g" path="res://art/assets/oak_woods_v1.0/decorations/shop.png" id="10_m8vk6"]
 [ext_resource type="Texture2D" uid="uid://dbkwm0ivex3c5" path="res://art/assets/oak_woods_v1.0/decorations/lamp.png" id="11_glbwq"]
 [ext_resource type="PackedScene" uid="uid://c5vjfo4etqa5n" path="res://scene/player.tscn" id="14_fo6mp"]
+[ext_resource type="PackedScene" uid="uid://fesvbtw0gsg3" path="res://scene/scene_transition_animation.tscn" id="16_m7uhc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y31sm"]
 texture = ExtResource("1_abpco")
@@ -1504,6 +1505,9 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ond6i"]
+size = Vector2(152, 49)
+
 [node name="Lobby" type="Node2D"]
 position = Vector2(288, 218)
 script = ExtResource("1_u5aqr")
@@ -1512,8 +1516,8 @@ script = ExtResource("1_u5aqr")
 position = Vector2(-270, -25)
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="Background Sprites"]
-position = Vector2(235.5, -12.0001)
-scale = Vector2(1.57812, 2.01111)
+position = Vector2(221, -19.5001)
+scale = Vector2(1.775, 2.09444)
 texture = ExtResource("1_gl36n")
 
 [node name="BackgroundLayer2" type="Sprite2D" parent="Background Sprites/BackgroundLayer1"]
@@ -1622,12 +1626,23 @@ texture = ExtResource("8_uwdmg")
 [node name="Collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(6, 6, 23, 6, 24, 142, 130, 141, 173, 139, 174, -230, 228, -209, 209, 155, -351, 155, -331, -260, -277, -258, -280, 7)
+polygon = PackedVector2Array(6, 6, 23, 6, 23, 159, 127, 159, 187, 159, 193, -230, 228, -209, 221, 189, -351, 187, -331, -260, -277, -258, -280, 7)
 
 [node name="Player" parent="." instance=ExtResource("14_fo6mp")]
 position = Vector2(-29, -37)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-56, -31)
-zoom = Vector2(2.5, 2.5)
+position = Vector2(-37, -31)
+zoom = Vector2(2.3, 2.3)
 script = SubResource("GDScript_aoro4")
+
+[node name="StartGameDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartGameDetection"]
+position = Vector2(99, 134.5)
+shape = SubResource("RectangleShape2D_ond6i")
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("16_m7uhc")]
+
+[connection signal="area_entered" from="StartGameDetection" to="." method="_on_start_game_detection_area_entered"]
+[connection signal="body_entered" from="StartGameDetection" to="." method="_on_start_game_detection_body_entered"]

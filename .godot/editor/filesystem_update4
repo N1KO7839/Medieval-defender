@@ -2,6 +2,7 @@ res://scene/lobby.tscn
 res://scene/bat.tscn
 res://scene/waves.tscn
 res://scene/player.tscn
-res://scripts/bat.gd
-res://scripts/global.gd
+res://scene/scene_transition_animation.tscn
+res://scripts/lobby.gd
+res://scripts/waves.gd
 res://scripts/player.gd

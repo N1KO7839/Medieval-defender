@@ -336,7 +336,8 @@ script = ExtResource("1_lfkg4")
 position = Vector2(0, 12.4155)
 scale = Vector2(0.711268, 0.711268)
 sprite_frames = SubResource("SpriteFrames_sfwn8")
-animation = &"singleAttack"
+animation = &"idle"
+frame_progress = 0.123001
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)

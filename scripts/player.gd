@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @onready var AnimatedSprite = $AnimatedSprite2D
 @onready var dealDamageZone = $DealDamageZone
 const speed = 200
@@ -78,19 +80,18 @@ func takeDamage(damage):
 			if health <= 0:
 				health = 0
 				dead = true
-				Global.playerAlive = false
+				velocity.x = 0
 				handleDeathAnimation()
 			takeDamageCooldown(1.0)
 			
 func handleDeathAnimation():
-	var target_zoom = Vector2(4, 4)
-	var zoom_speed = 1.0
-	var current_zoom = $Camera2D.zoom
 	AnimatedSprite.play("death")
 	await get_tree().create_timer(0.5).timeout
 	$Camera2D.zoom.x = 4
 	$Camera2D.zoom.y = 4
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.5).timeout
+	Global.playerAlive = false
+	await get_tree().create_timer(0.5).timeout
 	self.queue_free()
 	
 func takeDamageCooldown(wait_time):
