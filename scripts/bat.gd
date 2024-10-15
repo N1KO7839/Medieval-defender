@@ -6,12 +6,13 @@ const speed = 65
 var dir: Vector2
 
 var isBatChase: bool
+var isDealingDamage: bool = false
 
 var player: CharacterBody2D
 
 var health = 50
-var MaxHealth = 50
-var MinHealth = 50
+var maxHealth = 50
+var minHealth = 50
 var dead = false
 var takingDamage = false
 var isRoaming: bool
@@ -55,6 +56,7 @@ func move(delta):
 		else:
 			velocity += dir * speed * delta
 	elif dead:
+		damageToDeal = 0
 		move_collision_shape_down()
 		velocity.y += 100 * delta
 		velocity.x = 0
@@ -80,6 +82,10 @@ func handleAnimation():
 		animatedSprite.play("hurt")
 		await get_tree().create_timer(0.33).timeout
 		takingDamage = false
+	elif !dead and !takingDamage and isDealingDamage:
+		animatedSprite.play("attack")
+		await get_tree().create_timer(0.5).timeout
+		isDealingDamage = false
 	elif dead and isRoaming:
 		isRoaming = false
 		animatedSprite.play("death")

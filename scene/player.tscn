@@ -300,7 +300,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 7.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,10 +323,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jdv8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsmk1"]
-radius = 13.0
+radius = 14.0357
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrswq"]
-radius = 8.0
+radius = 9.0
 height = 44.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -336,8 +336,7 @@ script = ExtResource("1_lfkg4")
 position = Vector2(0, 12.4155)
 scale = Vector2(0.711268, 0.711268)
 sprite_frames = SubResource("SpriteFrames_sfwn8")
-animation = &"idle"
-frame_progress = 0.123001
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)
@@ -354,7 +353,7 @@ limit_bottom = 211
 [node name="DealDamageZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
-position = Vector2(22, 12)
+position = Vector2(22, 10)
 shape = SubResource("CircleShape2D_nsmk1")
 disabled = true
 

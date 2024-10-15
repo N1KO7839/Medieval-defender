@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxi21tvhagff0"]
+[gd_scene load_steps=48 format=3 uid="uid://bxi21tvhagff0"]
 
 [ext_resource type="Texture2D" uid="uid://ctfriifr687x8" path="res://art/assets/Skeleton/Skeleton enemy.png" id="1_0dyjv"]
 [ext_resource type="Script" path="res://scene/skeleton.gd" id="1_rjy04"]
@@ -317,14 +317,20 @@ animations = [{
 radius = 8.0
 height = 32.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ip8lt"]
+radius = 9.0
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1y3y"]
+radius = 12.0
+height = 36.0
+
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_rjy04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vlpg8")
-animation = &"Death"
-frame = 12
-frame_progress = 1.0
+animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
@@ -333,4 +339,19 @@ shape = SubResource("CapsuleShape2D_e8mdl")
 [node name="DirTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, -1)
+shape = SubResource("CapsuleShape2D_ip8lt")
+
+[node name="DealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageArea"]
+position = Vector2(-2, -1)
+shape = SubResource("CapsuleShape2D_x1y3y")
+
 [connection signal="timeout" from="DirTimer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="DealDamageArea" to="." method="_on_deal_damage_area_area_entered"]
+[connection signal="body_entered" from="DealDamageArea" to="." method="_on_deal_damage_area_body_entered"]

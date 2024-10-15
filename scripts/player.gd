@@ -27,9 +27,9 @@ func _ready():
 	Global.playerAlive = true
 
 
-func _physics_process(delta: float) -> void:
-	
+func _physics_process(delta):
 	Global.playerDamageZone = dealDamageZone
+	Global.playerHitbox = $PlayerHitbox
 	# Add the gravity.
 	
 	if not is_on_floor():
@@ -69,16 +69,18 @@ func chceckHitbox():
 		var hitbox = hitboxAreas.front()
 		if hitbox.get_parent() is BatEnemy:
 			damage = Global.batDamageAmout
+		elif hitbox.get_parent() is Skeleton:
+			damage = Global.skeletonDamageAmount
 	if canTakeDamage:
 		takeDamage(damage)
 	
 func takeDamage(damage):
 	if damage != 0:
-		if health > 0:
+		if health > minHealth:
 			health -= damage
 			print("health: ", health)
-			if health <= 0:
-				health = 0
+			if health <= minHealth:
+				health = minHealth
 				dead = true
 				velocity.x = 0
 				handleDeathAnimation()

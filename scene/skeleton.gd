@@ -11,7 +11,7 @@ var minHealth = 0
 	
 var dead: bool = false
 var takingDamage: bool = false
-var attack = 20
+var damageToDeal = 20
 var isDealingDamage: bool = false
 
 var dir: Vector2
@@ -28,6 +28,14 @@ func _process(delta):
 		velocity.y += gravity * delta
 		velocity.x = 0
 		
+		if Global.playerAlive:
+			isFrogChase = true
+		elif !Global.playerAlive:
+			isFrogChase = false
+		
+		Global.skeletonDamageAmount = damageToDeal
+		Global.skeletonDamageZone = $DealDamageArea
+		
 	move(delta)
 	handleAnimation()
 	move_and_slide()
@@ -42,7 +50,7 @@ func move(delta):
 			dir.x = abs(velocity.x)/velocity.x
 		elif takingDamage:
 			var knockbackDir = position.direction_to(player.position) * knockbackForce
-			velocity.x = knockbackDir
+			velocity.x = knockbackDir.x
 		isRoaming = true
 		
 	elif dead:
@@ -61,10 +69,13 @@ func handleAnimation():
 		await get_tree().create_timer(0.33).timeout
 		takingDamage = false
 	elif dead and isRoaming:
+		damageToDeal = 0
 		isRoaming = false
 		animatedSprite.play("Death")
 		await get_tree().create_timer(2.0).timeout
 		handleDeath()
+	elif !dead and !takingDamage and isDealingDamage:
+		animatedSprite.play("Attack")
 func handleDeath():
 	self.queue_free()	
 	
@@ -81,3 +92,24 @@ func  choose(array):
 
 func _ready():
 	isFrogChase = true
+
+
+func _on_hitbox_area_entered(area):
+	var damage = Global.playerDamageAmount
+	if area == Global.playerDamageZone:
+		takeDamage(damage)
+		
+func takeDamage(damage):
+	takingDamage = true
+	health -= damage
+	if health <= minHealth:
+		minHealth = minHealth
+		dead = true
+	print(str(self), "health: ", health)
+
+
+func _on_deal_damage_area_area_entered(area):
+	if area == Global.playerHitbox:
+		isDealingDamage = true
+		await get_tree().create_timer(1.0).timeout
+		isDealingDamage = false

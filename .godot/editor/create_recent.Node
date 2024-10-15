@@ -1,7 +1,7 @@
-Timer
 CollisionShape2D
+Area2D
+Timer
 AnimatedSprite2D
 CharacterBody2D
 AnimationPlayer
 ColorRect
-Area2D

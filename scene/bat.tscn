@@ -163,7 +163,9 @@ script = ExtResource("1_rkd1q")
 position = Vector2(2, 2)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_nhibo")
-animation = &"hurt"
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
@@ -186,3 +188,4 @@ shape = SubResource("CircleShape2D_kmomy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="BatDamageArea" to="." method="_on_bat_damage_area_area_entered"]
