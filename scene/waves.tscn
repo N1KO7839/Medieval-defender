@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cm46pyf1tldcf"]
+[gd_scene load_steps=26 format=3 uid="uid://cm46pyf1tldcf"]
 
 [ext_resource type="Script" path="res://scripts/waves.gd" id="1_berim"]
 [ext_resource type="Texture2D" uid="uid://dkyue67kubx3y" path="res://art/assets/oak_woods_v1.0/background/background_layer_1.png" id="1_nhg22"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dinqoy6a44crp" path="res://scene/bat.tscn" id="14_e0hoc"]
 [ext_resource type="PackedScene" uid="uid://fesvbtw0gsg3" path="res://scene/scene_transition_animation.tscn" id="15_liuof"]
 [ext_resource type="PackedScene" uid="uid://bxi21tvhagff0" path="res://scene/skeleton.tscn" id="16_pgukv"]
+[ext_resource type="Script" path="res://scene/current_score.gd" id="17_7b4d3"]
+[ext_resource type="Script" path="res://scene/current_wave.gd" id="18_yb7hx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6xem"]
 texture = ExtResource("4_wh5b0")
@@ -1650,3 +1652,21 @@ position = Vector2(417, 86)
 position = Vector2(604, 86)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("15_liuof")]
+
+[node name="ScoreLabels" type="StaticBody2D" parent="."]
+
+[node name="CurrentScore" type="RichTextLabel" parent="ScoreLabels"]
+offset_left = 46.0
+offset_top = 179.0
+offset_right = 206.0
+offset_bottom = 202.0
+text = "Current score: 0"
+script = ExtResource("17_7b4d3")
+
+[node name="CurrentWave" type="RichTextLabel" parent="ScoreLabels"]
+offset_left = 226.0
+offset_top = 179.0
+offset_right = 366.0
+offset_bottom = 204.0
+text = "Current wave: 0"
+script = ExtResource("18_yb7hx")

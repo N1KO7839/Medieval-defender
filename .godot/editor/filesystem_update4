@@ -1,7 +1,7 @@
-res://scene/waves.tscn
-res://scripts/waves.gd
 res://scene/lobby.tscn
 res://scene/bat.tscn
+res://scene/waves.tscn
 res://scene/scene_transition_animation.tscn
 res://scene/skeleton.tscn
 res://scene/player.tscn
+res://scripts/waves.gd

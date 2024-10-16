@@ -22,6 +22,8 @@ var isRoaming: bool = true
 var player: CharacterBody2D
 var playerInArea = false
 
+var addScore = 50
+
 func _process(delta):
 	player = Global.playerBody
 	if !is_on_floor():
@@ -77,6 +79,8 @@ func handleAnimation():
 	elif !dead and !takingDamage and isDealingDamage:
 		animatedSprite.play("Attack")
 func handleDeath():
+	Global.currentScore += addScore
+	print("score", Global.currentScore)
 	self.queue_free()	
 	
 

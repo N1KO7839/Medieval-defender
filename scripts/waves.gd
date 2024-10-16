@@ -78,14 +78,20 @@ func spawnType(type, mobSpawnRounds, mobWaitTime):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta:):
-	if !Global.playerAlive:
-		Global.gameStarted = false
+	if !Global.playerAlive and Global.gameStarted:
+		Global.gameStarted = false  # Ensure this runs only once
+		updateScore()  # Update score once
 		SceneTransitionAnimation.play("fadeIn")
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scene/lobby.tscn")
-	
-	CurrentNodes = get_child_count()
-	
+	CurrentNodes = get_child_count()	
 	if waveSpawnEnded:
 		positionToNextWave()
 		
+		
+func updateScore():
+	Global.previousScore = Global.currentScore
+	if Global.currentScore > Global.highScore:
+		Global.highScore = Global.currentScore
+	Global.currentScore = 0
+	print("Pre Score:", Global.previousScore)

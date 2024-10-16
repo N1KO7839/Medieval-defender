@@ -18,3 +18,7 @@ var skeletonDamageAmount: int
 
 var currentWave: int
 var movingToNextWave: bool
+
+var highScore = 0
+var currentScore: int
+var previousScore: int

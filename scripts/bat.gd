@@ -18,6 +18,8 @@ var takingDamage = false
 var isRoaming: bool
 var damageToDeal = 10
 
+var addScore = 20
+
 
 
 func _process(delta):
@@ -32,6 +34,8 @@ func _process(delta):
 	
 	if is_on_floor() and dead:
 		await get_tree().create_timer(2.5).timeout
+		Global.currentScore += addScore
+		print("score:", Global.currentScore)
 		self.queue_free()
 	
 	move(delta)

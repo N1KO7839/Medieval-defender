@@ -1,55 +1,59 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729056380
-icon.svg::CompressedTexture2D::8495292130777468806::1728808633::1728818826::1::::<><>::
-::res://art/::1728808633
-::res://art/assets/::1728926528
-Ambient 5.mp3::AudioStreamMP3::3264691369534078999::1728808633::1728818826::1::::<><>::
-::res://art/assets/Bat/::1728818826
-Bat.png::CompressedTexture2D::5019493167244988695::1728808633::1728818826::1::::<><>::
-::res://art/assets/Knight_1/::1728818826
-Attack 1.png::CompressedTexture2D::6698392479216312113::1728808633::1728818826::1::::<><>::
-Attack 2.png::CompressedTexture2D::4960389936487846124::1728808633::1728818826::1::::<><>::
-Attack 3.png::CompressedTexture2D::1707060640418415142::1728808633::1728818826::1::::<><>::
-Dead.png::CompressedTexture2D::8004680924596439142::1728808633::1728818826::1::::<><>::
-Hurt.png::CompressedTexture2D::2351101266519845217::1728808633::1728818826::1::::<><>::
-Idle.png::CompressedTexture2D::6945206008191912281::1728808633::1728818826::1::::<><>::
-Jump.png::CompressedTexture2D::7970851208853605231::1728808633::1728818826::1::::<><>::
-Run+Attack.png::CompressedTexture2D::3267256464477268898::1728808633::1728818826::1::::<><>::
-Run.png::CompressedTexture2D::3006797173786799039::1728808633::1728818826::1::::<><>::
-::res://art/assets/oak_woods_v1.0/::1728818826
-oak_woods_tileset.png::CompressedTexture2D::1373225691120769113::1728808633::1728818826::1::::<><>::
-::res://art/assets/oak_woods_v1.0/background/::1728818826
-background_layer_1.png::CompressedTexture2D::7911918714726754100::1728808633::1728818826::1::::<><>::
-background_layer_2.png::CompressedTexture2D::3779990054910250224::1728808633::1728818826::1::::<><>::
-background_layer_3.png::CompressedTexture2D::6920843813491239048::1728808633::1728818826::1::::<><>::
-::res://art/assets/oak_woods_v1.0/decorations/::1728818826
-fence_1.png::CompressedTexture2D::7307151634215603180::1728808633::1728818826::1::::<><>::
-fence_2.png::CompressedTexture2D::5016554926463748474::1728808633::1728818826::1::::<><>::
-grass_1.png::CompressedTexture2D::4852112455783581291::1728808633::1728818826::1::::<><>::
-grass_2.png::CompressedTexture2D::3518144999721098969::1728808633::1728818826::1::::<><>::
-grass_3.png::CompressedTexture2D::6217647534793398139::1728808633::1728818826::1::::<><>::
-lamp.png::CompressedTexture2D::7251453202028268906::1728808633::1728818826::1::::<><>::
-rock_1.png::CompressedTexture2D::1724608088618838035::1728808633::1728818826::1::::<><>::
-rock_2.png::CompressedTexture2D::6576236098976531056::1728808633::1728818826::1::::<><>::
-rock_3.png::CompressedTexture2D::4176155065971453655::1728808633::1728818826::1::::<><>::
-shop.png::CompressedTexture2D::7942210927729006766::1728808633::1728818826::1::::<><>::
-shop_anim.png::CompressedTexture2D::7335950299630337244::1728808633::1728818826::1::::<><>::
-TX Village Props.png::CompressedTexture2D::5922545219397195583::1728808633::1728818826::1::::<><>::
-::res://art/assets/Skeleton/::1728926528
-Skeleton enemy.png::CompressedTexture2D::6117798189233372039::1728926523::1728926528::1::::<><>::
-::res://art/assets/Slime/::1728818826
-slime-Sheet.png::CompressedTexture2D::4666730145255188429::1728808633::1728818826::1::::<><>::
-::res://scene/::1729026288
-bat.tscn::PackedScene::7748607492474508113::1729025584::0::1::::<><>::uid://cdrqk35gx2m4f::::res://art/assets/Bat/Bat.png<>res://scripts/bat.gd
-lobby.tscn::PackedScene::6264465066845058833::1729025584::0::1::::<><>::uid://ttg3do3lwl3v::::res://art/assets/oak_woods_v1.0/oak_woods_tileset.png<>uid://dkyue67kubx3y::::res://art/assets/oak_woods_v1.0/background/background_layer_1.png<>res://scripts/lobby.gd<>uid://bt4b5b3ocghu3::::res://art/assets/oak_woods_v1.0/background/background_layer_2.png<>uid://c5urj0fbfuo1m::::res://art/assets/oak_woods_v1.0/background/background_layer_3.png<>uid://cbent3h3j782b::::res://art/assets/oak_woods_v1.0/decorations/grass_1.png<>uid://cut40m68j1fmp::::res://art/assets/oak_woods_v1.0/decorations/grass_3.png<>uid://cqm6ppmo88xlv::::res://art/assets/oak_woods_v1.0/decorations/TX Village Props.png<>uid://bqehlmi7vhlbd::::res://art/assets/oak_woods_v1.0/decorations/grass_2.png<>uid://ytobp87cwsb0::::res://art/assets/oak_woods_v1.0/decorations/rock_1.png<>uid://b0q7wtlya5sr4::::res://art/assets/oak_woods_v1.0/decorations/rock_3.png<>uid://c0xtwa2fxbcia::::res://art/assets/oak_woods_v1.0/decorations/rock_2.png<>uid://dlfjb28arno3g::::res://art/assets/oak_woods_v1.0/decorations/shop.png<>uid://dbkwm0ivex3c5::::res://art/assets/oak_woods_v1.0/decorations/lamp.png<>uid://c5vjfo4etqa5n::::res://scene/player.tscn<>uid://fesvbtw0gsg3::::res://scene/scene_transition_animation.tscn
-player.tscn::PackedScene::6922414771600843641::1729025585::0::1::::<><>::uid://dmbr6pxfh8uq5::::res://art/assets/Knight_1/Dead.png<>res://scripts/player.gd<>uid://c2o0sst0wb8c8::::res://art/assets/Knight_1/Attack 1.png<>uid://ccw35rsuhedy7::::res://art/assets/Knight_1/Attack 2.png<>uid://c57kr7wik1grp::::res://art/assets/Knight_1/Idle.png<>uid://dlte0wu1ohwb4::::res://art/assets/Knight_1/Jump.png<>uid://bi3rrl0c03i6r::::res://art/assets/Knight_1/Run.png<>uid://yk6blqlqmiu5::::res://art/assets/Knight_1/Attack 3.png
-scene_transition_animation.tscn::PackedScene::360332219656078832::1729025585::0::1::::<><>::
-skeleton.gd::GDScript::-1::1729021773::0::1::::Skeleton<>CharacterBody2D<>::
-skeleton.tscn::PackedScene::4018965929549381159::1729025585::0::1::::<><>::uid://ctfriifr687x8::::res://art/assets/Skeleton/Skeleton enemy.png<>res://scene/skeleton.gd
-waves.tscn::PackedScene::5676884729086230877::1729026288::0::1::::<><>::res://scripts/waves.gd<>uid://dkyue67kubx3y::::res://art/assets/oak_woods_v1.0/background/background_layer_1.png<>uid://bt4b5b3ocghu3::::res://art/assets/oak_woods_v1.0/background/background_layer_2.png<>uid://c5urj0fbfuo1m::::res://art/assets/oak_woods_v1.0/background/background_layer_3.png<>uid://ttg3do3lwl3v::::res://art/assets/oak_woods_v1.0/oak_woods_tileset.png<>uid://cqm6ppmo88xlv::::res://art/assets/oak_woods_v1.0/decorations/TX Village Props.png<>uid://c0xtwa2fxbcia::::res://art/assets/oak_woods_v1.0/decorations/rock_2.png<>uid://b0q7wtlya5sr4::::res://art/assets/oak_woods_v1.0/decorations/rock_3.png<>uid://ytobp87cwsb0::::res://art/assets/oak_woods_v1.0/decorations/rock_1.png<>uid://dcdvyqedflccy::::res://art/assets/oak_woods_v1.0/decorations/fence_1.png<>uid://cdqb6rjpjxrj3::::res://art/assets/oak_woods_v1.0/decorations/fence_2.png<>uid://dbkwm0ivex3c5::::res://art/assets/oak_woods_v1.0/decorations/lamp.png<>uid://c5vjfo4etqa5n::::res://scene/player.tscn<>uid://dinqoy6a44crp::::res://scene/bat.tscn<>uid://fesvbtw0gsg3::::res://scene/scene_transition_animation.tscn<>uid://bxi21tvhagff0::::res://scene/skeleton.tscn
-::res://scripts/::1729026288
-bat.gd::GDScript::-1::1729022065::0::1::::BatEnemy<>CharacterBody2D<>::
-global.gd::GDScript::-1::1729025064::0::1::::<>Node<>::
-lobby.gd::GDScript::-1::1728906359::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1729019891::0::1::::Player<>CharacterBody2D<>::
-waves.gd::GDScript::-1::1729026288::0::1::::<>Node2D<>::
+::res://::1729094710
+icon.svg::CompressedTexture2D::8495292130777468806::1729060905::1729060964::1::::<><>::
+::res://art/::1729060905
+::res://art/assets/::1729060964
+Ambient 5.mp3::AudioStreamMP3::3264691369534078999::1729060905::1729060964::1::::<><>::
+::res://art/assets/Bat/::1729060965
+Bat.png::CompressedTexture2D::5019493167244988695::1729060905::1729060965::1::::<><>::
+::res://art/assets/Knight_1/::1729060965
+Attack 1.png::CompressedTexture2D::6698392479216312113::1729060905::1729060965::1::::<><>::
+Attack 2.png::CompressedTexture2D::4960389936487846124::1729060905::1729060965::1::::<><>::
+Attack 3.png::CompressedTexture2D::1707060640418415142::1729060905::1729060965::1::::<><>::
+Dead.png::CompressedTexture2D::8004680924596439142::1729060905::1729060965::1::::<><>::
+Hurt.png::CompressedTexture2D::2351101266519845217::1729060905::1729060965::1::::<><>::
+Idle.png::CompressedTexture2D::6945206008191912281::1729060905::1729060965::1::::<><>::
+Jump.png::CompressedTexture2D::7970851208853605231::1729060905::1729060965::1::::<><>::
+Run+Attack.png::CompressedTexture2D::3267256464477268898::1729060905::1729060965::1::::<><>::
+Run.png::CompressedTexture2D::3006797173786799039::1729060905::1729060965::1::::<><>::
+::res://art/assets/oak_woods_v1.0/::1729060964
+oak_woods_tileset.png::CompressedTexture2D::1373225691120769113::1729060905::1729060964::1::::<><>::
+::res://art/assets/oak_woods_v1.0/background/::1729060965
+background_layer_1.png::CompressedTexture2D::7911918714726754100::1729060905::1729060964::1::::<><>::
+background_layer_2.png::CompressedTexture2D::3779990054910250224::1729060905::1729060964::1::::<><>::
+background_layer_3.png::CompressedTexture2D::6920843813491239048::1729060905::1729060964::1::::<><>::
+::res://art/assets/oak_woods_v1.0/decorations/::1729060965
+fence_1.png::CompressedTexture2D::7307151634215603180::1729060905::1729060964::1::::<><>::
+fence_2.png::CompressedTexture2D::5016554926463748474::1729060905::1729060964::1::::<><>::
+grass_1.png::CompressedTexture2D::4852112455783581291::1729060905::1729060964::1::::<><>::
+grass_2.png::CompressedTexture2D::3518144999721098969::1729060905::1729060964::1::::<><>::
+grass_3.png::CompressedTexture2D::6217647534793398139::1729060905::1729060964::1::::<><>::
+lamp.png::CompressedTexture2D::7251453202028268906::1729060905::1729060964::1::::<><>::
+rock_1.png::CompressedTexture2D::1724608088618838035::1729060905::1729060964::1::::<><>::
+rock_2.png::CompressedTexture2D::6576236098976531056::1729060905::1729060964::1::::<><>::
+rock_3.png::CompressedTexture2D::4176155065971453655::1729060905::1729060964::1::::<><>::
+shop.png::CompressedTexture2D::7942210927729006766::1729060905::1729060964::1::::<><>::
+shop_anim.png::CompressedTexture2D::7335950299630337244::1729060905::1729060964::1::::<><>::
+TX Village Props.png::CompressedTexture2D::5922545219397195583::1729060905::1729060965::1::::<><>::
+::res://art/assets/Skeleton/::1729060964
+Skeleton enemy.png::CompressedTexture2D::6117798189233372039::1729060905::1729060964::1::::<><>::
+::res://art/assets/Slime/::1729060964
+slime-Sheet.png::CompressedTexture2D::4666730145255188429::1729060905::1729060964::1::::<><>::
+::res://scene/::1729094682
+bat.tscn::PackedScene::7748607492474508113::1729094442::0::1::::<><>::uid://cdrqk35gx2m4f::::res://art/assets/Bat/Bat.png<>res://scripts/bat.gd
+current_score.gd::GDScript::-1::1729093406::0::1::::<>RichTextLabel<>::
+current_wave.gd::GDScript::-1::1729093407::0::1::::<>RichTextLabel<>::
+high_score.gd::GDScript::-1::1729094058::0::1::::<>RichTextLabel<>::
+lobby.tscn::PackedScene::6264465066845058833::1729094682::0::1::::<><>::uid://ttg3do3lwl3v::::res://art/assets/oak_woods_v1.0/oak_woods_tileset.png<>uid://dkyue67kubx3y::::res://art/assets/oak_woods_v1.0/background/background_layer_1.png<>res://scripts/lobby.gd<>uid://bt4b5b3ocghu3::::res://art/assets/oak_woods_v1.0/background/background_layer_2.png<>uid://c5urj0fbfuo1m::::res://art/assets/oak_woods_v1.0/background/background_layer_3.png<>uid://cbent3h3j782b::::res://art/assets/oak_woods_v1.0/decorations/grass_1.png<>uid://cut40m68j1fmp::::res://art/assets/oak_woods_v1.0/decorations/grass_3.png<>uid://cqm6ppmo88xlv::::res://art/assets/oak_woods_v1.0/decorations/TX Village Props.png<>uid://bqehlmi7vhlbd::::res://art/assets/oak_woods_v1.0/decorations/grass_2.png<>uid://ytobp87cwsb0::::res://art/assets/oak_woods_v1.0/decorations/rock_1.png<>uid://b0q7wtlya5sr4::::res://art/assets/oak_woods_v1.0/decorations/rock_3.png<>uid://c0xtwa2fxbcia::::res://art/assets/oak_woods_v1.0/decorations/rock_2.png<>uid://dlfjb28arno3g::::res://art/assets/oak_woods_v1.0/decorations/shop.png<>uid://dbkwm0ivex3c5::::res://art/assets/oak_woods_v1.0/decorations/lamp.png<>uid://c5vjfo4etqa5n::::res://scene/player.tscn<>uid://fesvbtw0gsg3::::res://scene/scene_transition_animation.tscn<>res://scene/high_score.gd<>res://scene/previous_score.gd
+player.tscn::PackedScene::6922414771600843641::1729094443::0::1::::<><>::uid://dmbr6pxfh8uq5::::res://art/assets/Knight_1/Dead.png<>res://scripts/player.gd<>uid://c2o0sst0wb8c8::::res://art/assets/Knight_1/Attack 1.png<>uid://ccw35rsuhedy7::::res://art/assets/Knight_1/Attack 2.png<>uid://c57kr7wik1grp::::res://art/assets/Knight_1/Idle.png<>uid://dlte0wu1ohwb4::::res://art/assets/Knight_1/Jump.png<>uid://bi3rrl0c03i6r::::res://art/assets/Knight_1/Run.png<>uid://yk6blqlqmiu5::::res://art/assets/Knight_1/Attack 3.png
+previous_score.gd::GDScript::-1::1729094058::0::1::::<>RichTextLabel<>::
+scene_transition_animation.tscn::PackedScene::360332219656078832::1729094443::0::1::::<><>::
+skeleton.gd::GDScript::-1::1729067598::0::1::::Skeleton<>CharacterBody2D<>::
+skeleton.tscn::PackedScene::4018965929549381159::1729094443::0::1::::<><>::uid://ctfriifr687x8::::res://art/assets/Skeleton/Skeleton enemy.png<>res://scene/skeleton.gd
+waves.tscn::PackedScene::5676884729086230877::1729094443::0::1::::<><>::res://scripts/waves.gd<>uid://dkyue67kubx3y::::res://art/assets/oak_woods_v1.0/background/background_layer_1.png<>uid://bt4b5b3ocghu3::::res://art/assets/oak_woods_v1.0/background/background_layer_2.png<>uid://c5urj0fbfuo1m::::res://art/assets/oak_woods_v1.0/background/background_layer_3.png<>uid://ttg3do3lwl3v::::res://art/assets/oak_woods_v1.0/oak_woods_tileset.png<>uid://cqm6ppmo88xlv::::res://art/assets/oak_woods_v1.0/decorations/TX Village Props.png<>uid://c0xtwa2fxbcia::::res://art/assets/oak_woods_v1.0/decorations/rock_2.png<>uid://b0q7wtlya5sr4::::res://art/assets/oak_woods_v1.0/decorations/rock_3.png<>uid://ytobp87cwsb0::::res://art/assets/oak_woods_v1.0/decorations/rock_1.png<>uid://dcdvyqedflccy::::res://art/assets/oak_woods_v1.0/decorations/fence_1.png<>uid://cdqb6rjpjxrj3::::res://art/assets/oak_woods_v1.0/decorations/fence_2.png<>uid://dbkwm0ivex3c5::::res://art/assets/oak_woods_v1.0/decorations/lamp.png<>uid://c5vjfo4etqa5n::::res://scene/player.tscn<>uid://dinqoy6a44crp::::res://scene/bat.tscn<>uid://fesvbtw0gsg3::::res://scene/scene_transition_animation.tscn<>uid://bxi21tvhagff0::::res://scene/skeleton.tscn<>res://scene/current_score.gd<>res://scene/current_wave.gd
+::res://scripts/::1729094442
+bat.gd::GDScript::-1::1729067598::0::1::::BatEnemy<>CharacterBody2D<>::
+global.gd::GDScript::-1::1729061268::0::1::::<>Node<>::
+lobby.gd::GDScript::-1::1729060905::0::1::::<>Node2D<>::
+player.gd::GDScript::-1::1729060905::0::1::::Player<>CharacterBody2D<>::
+waves.gd::GDScript::-1::1729094442::0::1::::<>Node2D<>::
