@@ -4,4 +4,5 @@ res://scene/waves.tscn
 res://scene/scene_transition_animation.tscn
 res://scene/skeleton.tscn
 res://scene/player.tscn
-res://scripts/waves.gd
+res://scene/health_bar.tscn
+res://scene/skeleton.gd

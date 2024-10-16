@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dinqoy6a44crp"]
+[gd_scene load_steps=25 format=3 uid="uid://dinqoy6a44crp"]
 
 [ext_resource type="Texture2D" uid="uid://cdrqk35gx2m4f" path="res://art/assets/Bat/Bat.png" id="1_j0hr0"]
 [ext_resource type="Script" path="res://scripts/bat.gd" id="1_rkd1q"]
+[ext_resource type="PackedScene" uid="uid://544cfb634usg" path="res://scene/health_bar.tscn" id="3_ypupt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g16gc"]
 atlas = ExtResource("1_j0hr0")
@@ -163,9 +164,7 @@ script = ExtResource("1_rkd1q")
 position = Vector2(2, 2)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_nhibo")
-animation = &"attack"
-frame = 3
-frame_progress = 1.0
+animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
@@ -185,6 +184,12 @@ shape = SubResource("CircleShape2D_yqaa5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BatDamageArea"]
 position = Vector2(2, -2)
 shape = SubResource("CircleShape2D_kmomy")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_ypupt")]
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 8.0
+offset_bottom = 6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

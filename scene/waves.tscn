@@ -1606,6 +1606,8 @@ position = Vector2(722, 143)
 texture = ExtResource("11_kriq4")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+light_mask = 5
+visibility_layer = 5
 
 [node name="GroundCollision" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(371, 207.5)
@@ -1631,7 +1633,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatColision"]
-polygon = PackedVector2Array(0, 0, 731, -1, 729, -288, 530, -295, 278, -298, 58, -298, 9, -282, -5, -207, -2, -157, 0, -3, -57, 1, -49, -331, 172, -396, 660, -397, 830, -283, 842, -42, 780, 54, 518, 104, 95, 88, -57, 2, -1, -2)
+polygon = PackedVector2Array(-1, 16, 731, 16, 729, -288, 530, -295, 278, -298, 58, -298, 9, -282, -5, -207, -2, -157, 0, -3, -57, 1, -49, -331, 172, -396, 660, -397, 830, -283, 842, -42, 780, 54, 535, 85, 95, 88, -57, 2, -1, -2)
 
 [node name="BatSpawn1" type="Marker2D" parent="."]
 position = Vector2(147, -77)
@@ -1652,6 +1654,7 @@ position = Vector2(417, 86)
 position = Vector2(604, 86)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("15_liuof")]
+position = Vector2(-5, -7)
 
 [node name="ScoreLabels" type="StaticBody2D" parent="."]
 

@@ -144,9 +144,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func setDamage(attackType):
 	var currentDamageToDeal: int
 	if attackType == "singleAttack":
-		currentDamageToDeal = 10
-	elif attackType == "doubleAttack":
 		currentDamageToDeal = 20
+	elif attackType == "doubleAttack":
+		currentDamageToDeal = 25
 	elif attackType == "airAttack":
-		currentDamageToDeal = 7
+		currentDamageToDeal = 15
 	Global.playerDamageAmount = currentDamageToDeal

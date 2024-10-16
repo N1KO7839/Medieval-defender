@@ -1,7 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxi21tvhagff0"]
+[gd_scene load_steps=49 format=3 uid="uid://bxi21tvhagff0"]
 
 [ext_resource type="Texture2D" uid="uid://ctfriifr687x8" path="res://art/assets/Skeleton/Skeleton enemy.png" id="1_0dyjv"]
 [ext_resource type="Script" path="res://scene/skeleton.gd" id="1_rjy04"]
+[ext_resource type="PackedScene" uid="uid://544cfb634usg" path="res://scene/health_bar.tscn" id="3_nwxpj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmq3u"]
 atlas = ExtResource("1_0dyjv")
@@ -326,6 +327,8 @@ radius = 12.0
 height = 36.0
 
 [node name="Skeleton" type="CharacterBody2D"]
+light_mask = 5
+visibility_layer = 5
 script = ExtResource("1_rjy04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -342,6 +345,8 @@ autostart = true
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_ip8lt")
 
@@ -350,6 +355,12 @@ shape = SubResource("CapsuleShape2D_ip8lt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageArea"]
 position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_x1y3y")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_nwxpj")]
+offset_left = -10.0
+offset_top = 18.0
+offset_right = 7.0
+offset_bottom = 21.0
 
 [connection signal="timeout" from="DirTimer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -72,6 +72,11 @@ func handleAnimation():
 		takingDamage = false
 	elif dead and isRoaming:
 		damageToDeal = 0
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(2, true)
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(1, false)
+		damageToDeal = 0
 		isRoaming = false
 		animatedSprite.play("Death")
 		await get_tree().create_timer(2.0).timeout
@@ -79,6 +84,7 @@ func handleAnimation():
 	elif !dead and !takingDamage and isDealingDamage:
 		animatedSprite.play("Attack")
 func handleDeath():
+	damageToDeal = 0
 	Global.currentScore += addScore
 	print("score", Global.currentScore)
 	self.queue_free()	

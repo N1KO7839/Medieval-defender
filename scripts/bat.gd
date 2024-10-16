@@ -33,6 +33,8 @@ func _process(delta):
 		
 	
 	if is_on_floor() and dead:
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(1, false)
 		await get_tree().create_timer(2.5).timeout
 		Global.currentScore += addScore
 		print("score:", Global.currentScore)

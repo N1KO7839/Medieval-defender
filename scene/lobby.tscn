@@ -1649,9 +1649,9 @@ shape = SubResource("RectangleShape2D_ond6i")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="HighScore" type="RichTextLabel" parent="StaticBody2D"]
-offset_left = -288.0
+offset_left = -287.0
 offset_top = -151.0
-offset_right = -109.0
+offset_right = -108.0
 offset_bottom = -125.0
 text = "Highest score: 0"
 script = ExtResource("17_wgfgy")
