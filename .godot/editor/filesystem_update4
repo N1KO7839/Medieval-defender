@@ -1,10 +1,7 @@
-res://scene/player.tscn
-res://scene/skeleton.gd
-res://scene/skeleton.tscn
-res://scripts/bat.gd
-res://scripts/player.gd
+res://scene/waves.tscn
+res://scripts/waves.gd
 res://scene/lobby.tscn
 res://scene/bat.tscn
-res://scene/waves.tscn
 res://scene/scene_transition_animation.tscn
-res://scripts/global.gd
+res://scene/skeleton.tscn
+res://scene/player.tscn

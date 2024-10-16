@@ -14,3 +14,7 @@ var batDamageAmout: int
 
 var skeletonDamageZone: Area2D
 var skeletonDamageAmount: int
+
+
+var currentWave: int
+var movingToNextWave: bool

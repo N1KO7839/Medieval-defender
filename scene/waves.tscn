@@ -1502,6 +1502,8 @@ size = Vector2(14, 274)
 
 [node name="Waves" type="Node2D"]
 script = ExtResource("1_berim")
+batScene = ExtResource("14_e0hoc")
+skeletonScene = ExtResource("16_pgukv")
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="."]
 position = Vector2(372, 3.8147e-06)
@@ -1621,9 +1623,6 @@ position = Vector2(69, -36)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(766, 126)
 
-[node name="Bat" parent="." instance=ExtResource("14_e0hoc")]
-position = Vector2(137, 100)
-
 [node name="BatColision" type="StaticBody2D" parent="."]
 position = Vector2(23, 155)
 collision_layer = 2
@@ -1632,13 +1631,22 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatColision"]
 polygon = PackedVector2Array(0, 0, 731, -1, 729, -288, 530, -295, 278, -298, 58, -298, 9, -282, -5, -207, -2, -157, 0, -3, -57, 1, -49, -331, 172, -396, 660, -397, 830, -283, 842, -42, 780, 54, 518, 104, 95, 88, -57, 2, -1, -2)
 
-[node name="Bat2" parent="." instance=ExtResource("14_e0hoc")]
-position = Vector2(186, 70)
+[node name="BatSpawn1" type="Marker2D" parent="."]
+position = Vector2(147, -77)
 
-[node name="Bat3" parent="." instance=ExtResource("14_e0hoc")]
-position = Vector2(265, 93)
+[node name="BatSpawn2" type="Marker2D" parent="."]
+position = Vector2(215, -77)
 
-[node name="Skeleton" parent="." instance=ExtResource("16_pgukv")]
-position = Vector2(340, 138)
+[node name="BatSpawn3" type="Marker2D" parent="."]
+position = Vector2(283, -77)
+
+[node name="BatSpawn4" type="Marker2D" parent="."]
+position = Vector2(362, -77)
+
+[node name="SkeletonSpawn1" type="Marker2D" parent="."]
+position = Vector2(417, 86)
+
+[node name="SkeletonSpawn2" type="Marker2D" parent="."]
+position = Vector2(604, 86)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("15_liuof")]

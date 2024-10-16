@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://fesvbtw0gsg3"]
+[gd_scene load_steps=6 format=3 uid="uid://fesvbtw0gsg3"]
 
 [sub_resource type="Animation" id="Animation_jdlyh"]
 length = 0.001
@@ -13,6 +13,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ummhq"]
+resource_name = "betweenWaves"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.266667), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xiv7p"]
@@ -50,6 +65,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjx5j"]
 _data = {
 "RESET": SubResource("Animation_jdlyh"),
+"betweenWaves": SubResource("Animation_ummhq"),
 "fadeIn": SubResource("Animation_xiv7p"),
 "fadeOut": SubResource("Animation_cq5kt")
 }
