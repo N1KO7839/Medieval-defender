@@ -1,23 +1,26 @@
 # Medieval Defender
 
-Medieval Defender is a 2D hack-and-slash game made in Godot, with all scripts written in `.gd`.
+Welcome to **Medieval Defender**! 2D hack-and-slash game created using Godot
 
-## Gameplay
-In the game, you defend against waves of bats and skeletons. As you survive, each wave gets harder, with more enemies appearing. Your goal is to fight through these enemies and keep going as long as you can.
+## 🎮 Gameplay
+In **Medieval Defender**, you fight against waves of bats and skeletons. As you progress, each wave becomes tougher, with more enemies appearing. Your goal is to defeat as many enemies as you can and survive for as long as possible.
 
-## Features
-- Bats and skeletons as enemies 🦇
-- Increasing difficulty with every wave ↗️
-- Simple, fast-paced combat ⚔️
+## ✨ Features
+- **Challenging Enemies:** Face off against bats and skeletons. 🦇
+- **Increasing Difficulty:** Each wave introduces more foes. ↗️
+- **Simple Combat:** Enjoy fast-paced, straightforward gameplay. ⚔️
 
-## How to Play
-- Move your character and fight off enemies.
-- Survive as many waves as possible!
-- Get the highest score you can!
+## 🚀 Technologies Used
+- **Godot:** Game engine for building 2D games. 🕹️
+- **GDScript:** The scripting language used for game logic. 🧑‍💻
 
-Controls
-Move: WASD 
-Attack: Left Mouse Button, Right Mouse Button
-Jump: Spacebar
+## 📸 Screenshots
+Here are some screenshots from the game:
 
-Enjoy the challenge of **Medieval Defender** and see how far you can get!
+![Screenshot 1](https://github.com/user-attachments/assets/e45026a3-20fe-48e6-8b01-8a2a0a56a732)
+![Screenshot 2](https://github.com/user-attachments/assets/280a6236-6662-443f-80fe-3ae5e01e7cdf)
+![Screenshot 3](https://github.com/user-attachments/assets/38461cb4-8e6d-4c73-8faa-cb297d1c7da6)
+
+## 📥 Download
+You can download the game as an `.exe` file from the following link: 
+[Download Medieval Defender](https://drive.google.com/drive/folders/1BA-W8tbh2cgkMjM4htetk0IywcrnXmMC?usp=drive_link)
